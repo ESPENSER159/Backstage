@@ -13,6 +13,7 @@ module.exports = {
       'text': '#231f20',
       'textAlt': '#251d20',
       'textLight': '#fff',
+      'pink': '#e568ac',
     },
     extend: {},
   },

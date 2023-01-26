@@ -1,4 +1,4 @@
-import Cart from './cart';
+import Card from './card';
 import Issue1 from '../images/issue1.png';
 import Issue2 from '../images/issue2.png';
 import Issue3 from '../images/issue3.png';
@@ -9,49 +9,71 @@ import Issue6 from '../images/issue6.png';
 export default function Body() {
 
     const scrollHandler = () => {
-        let cart1 = document.getElementById('cart1')
-        let cart2 = document.getElementById('cart2')
-        let cart3 = document.getElementById('cart3')
-        let cart4 = document.getElementById('cart4')
-        let cart5 = document.getElementById('cart5')
-        let cart6 = document.getElementById('cart6')
+        let card1 = document.getElementById('card1')
+        let card2 = document.getElementById('card2')
+        let card3 = document.getElementById('card3')
+        let card4 = document.getElementById('card4')
+        let card5 = document.getElementById('card5')
+        let card6 = document.getElementById('card6')
 
         let beforeDistance = 200
 
-        let pos_cart1 = cart1.offsetTop - beforeDistance
-        let pos_cart2 = cart2.offsetTop - beforeDistance
-        let pos_cart3 = cart3.offsetTop - beforeDistance
-        let pos_cart4 = cart4.offsetTop - beforeDistance
-        let pos_cart5 = cart5.offsetTop - beforeDistance
-        let pos_cart6 = cart6.offsetTop - beforeDistance
+        let pos_card1 = card1.offsetTop - beforeDistance
+        let pos_card2 = card2.offsetTop - beforeDistance
+        let pos_card3 = card3.offsetTop - beforeDistance
+        let pos_card4 = card4.offsetTop - beforeDistance
+        let pos_card5 = card5.offsetTop - beforeDistance
+        let pos_card6 = card6.offsetTop - beforeDistance
 
-        let distance_cart1 = pos_cart1
-        let distance_cart2 = pos_cart2
-        let distance_cart3 = pos_cart3
-        let distance_cart4 = pos_cart4
-        let distance_cart5 = pos_cart5
-        let distance_cart6 = pos_cart6
+        let distance_card1 = pos_card1
+        let distance_card2 = pos_card2
+        let distance_card3 = pos_card3
+        let distance_card4 = pos_card4
+        let distance_card5 = pos_card5
+        let distance_card6 = pos_card6
 
         document.getElementById('fullpage').style.backgroundColor = 'white'
 
-        if(window.pageYOffset >= distance_cart1) document.getElementById('fullpage').style.backgroundColor = 'white'
-        if(window.pageYOffset >= distance_cart2) document.getElementById('fullpage').style.backgroundColor = '#00c1b5'
-        if(window.pageYOffset >= distance_cart3) document.getElementById('fullpage').style.backgroundColor = '#ffbe00'
-        if(window.pageYOffset >= distance_cart4) document.getElementById('fullpage').style.backgroundColor = '#ff651a'
-        if(window.pageYOffset >= distance_cart5) document.getElementById('fullpage').style.backgroundColor = '#1d3fbb'
-        if(window.pageYOffset >= distance_cart6) document.getElementById('fullpage').style.backgroundColor = '#e30512'
+        for (let i = 1; i <= 6; i++) {
+            document.getElementById(`refCard${i}`).style.fontWeight = '500'
+        } 
+
+        if (window.pageYOffset >= distance_card1 && window.pageYOffset <= distance_card2) {
+            document.getElementById('fullpage').style.backgroundColor = 'white'
+            document.getElementById('refCard1').style.fontWeight = 'bold'
+        }
+        if (window.pageYOffset >= distance_card2 && window.pageYOffset <= distance_card3) {
+            document.getElementById('fullpage').style.backgroundColor = '#00c1b5'
+            document.getElementById('refCard2').style.fontWeight = 'bold'
+        }
+        if (window.pageYOffset >= distance_card3 && window.pageYOffset <= distance_card4) {
+            document.getElementById('fullpage').style.backgroundColor = '#ffbe00'
+            document.getElementById('refCard3').style.fontWeight = 'bold'
+        }
+        if (window.pageYOffset >= distance_card4 && window.pageYOffset <= distance_card5) {
+            document.getElementById('fullpage').style.backgroundColor = '#ff651a'
+            document.getElementById('refCard4').style.fontWeight = 'bold'
+        }
+        if (window.pageYOffset >= distance_card5 && window.pageYOffset <= distance_card6) {
+            document.getElementById('fullpage').style.backgroundColor = '#1d3fbb'
+            document.getElementById('refCard5').style.fontWeight = 'bold'
+        }
+        if (window.pageYOffset >= distance_card6) {
+            document.getElementById('fullpage').style.backgroundColor = '#e30512'
+            document.getElementById('refCard6').style.fontWeight = 'bold'
+        }
     }
 
     window.addEventListener('scroll', scrollHandler)
 
     return (
         <div id='fullpage' className="flex justify-center items-center flex-col ease-in duration-300">
-            <Cart id_cart={'cart1'} image={Issue1} title={'Issue #1'} />
-            <Cart id_cart={'cart2'} image={Issue2} title={'Issue #2'} />
-            <Cart id_cart={'cart3'} image={Issue3} title={'Issue #3'} />
-            <Cart id_cart={'cart4'} image={Issue4} title={'Issue #4'} />
-            <Cart id_cart={'cart5'} image={Issue5} title={'Issue #5'} />
-            <Cart id_cart={'cart6'} image={Issue6} title={'Issue #6'} />
+            <Card id_card={'card1'} image={Issue1} title={'Issue #1'} colorText={'#e568ac'} />
+            <Card id_card={'card2'} image={Issue2} title={'Issue #2'} />
+            <Card id_card={'card3'} image={Issue3} title={'Issue #3'} />
+            <Card id_card={'card4'} image={Issue4} title={'Issue #4'} />
+            <Card id_card={'card5'} image={Issue5} title={'Issue #5'} />
+            <Card id_card={'card6'} image={Issue6} title={'Issue #6'} />
         </div>
     )
 }
