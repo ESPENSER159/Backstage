@@ -11,6 +11,8 @@ module.exports = {
       'blue': '#1d3fbb',
       'red': '#e30512',
       'text': '#231f20',
+      'textAlt': '#251d20',
+      'textLight': '#fff',
     },
     extend: {},
   },
