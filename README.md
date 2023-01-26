@@ -8,7 +8,7 @@ Project developed with the library [React](https://es.reactjs.org/) using [tailw
 Clone the project
 
 ```bash
-git clone https://github.com/ESPENSER159/page404_React.git && cd page404_React
+git clone https://github.com/ESPENSER159/Backstage.git && cd Backstage
 ```
 Install dependences
 ```bash
